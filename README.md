@@ -1,6 +1,6 @@
 SAMS (Secret Agent Messaging Service)
 ==========
-www.sams.fourthlight.com <br>
+<a href="http://sams.fourthlight.com">sams.fourthlight.com</a> <br>
 A student project for Advanced Serverside Langages. <br>
 
 SAMS is a website with a secret interface. To access the secret: up, up, down, down, left, right, left, right, b, a <br>
