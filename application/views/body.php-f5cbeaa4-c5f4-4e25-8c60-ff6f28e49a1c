@@ -1,0 +1,40 @@
+<!--SAMS interface-->
+<div id="sams-content" class="hidden absolute">
+    <div id="interface" class="absolute">
+        <img id="outer-glow" class="absolute" src="../../public/img/outer-glow.png">
+        <img id="interface-darken" class="absolute" src="../../public/img/darken-layer.png">
+        <img id="logo" class="absolute" src="../../public/img/sams-title.png">
+        <button id="send-button" class="interface-button absolute"></button>
+        <button id="read-button" class="interface-button absolute"></button>
+        <!--send form-->
+        <div id="send-form-div" class="absolute">
+            <form id="send-form">
+                <div id="sent-message" class="hidden absolute">MESSAGE SENT</div>
+                <input id="agent-name" class="send-input" name="agentNameSend" type="text" placeholder="agent">
+                <input id="key" class="send-input" name="keySend" type="text" placeholder="key">
+                <textarea id="message" class="" name="msg" placeholder="message" spellcheck="false"></textarea>
+                <button id="confirm-button-send"></button>
+            </form>
+        </div>
+        <!--read form-->
+        <div id="read-form-div" class="absolute hidden">
+            <form id="read-form">
+                <input id="agent-name-read" class="read-input" name="agentNameRead" type="text" placeholder="agent">
+                <input id="key-read" class="read-input" name="keyRead" type="text" placeholder="key">
+                <div id="msg-body" class="hidden" wrap="hard">NO MESSAGE FOUND</div>
+                <p id="warning" class="hidden">THIS MESSAGE HAS BEEN DELETED</p>
+                <button id="confirm-button-read"></button>
+                <button id="delete-button" class="hidden"></button>
+            </form>
+        </div>
+        <img id="interface-svg" class="absolute" src="../../public/img/hackerterminal.svg" height="450" width="730">
+    </div><!--end interface-->
+</div><!--end sams interface-->
+
+<!--pseudo content-->
+<div id="pseudo-content" class="absolute">
+    <div id="pseudo-title" class="" data-text="secret agent messageing service">Eric's Super Awesome Website</div>
+    <img id="glitched-image" class="hidden" src="../../public/img/welcome-glitched.png" height="427" width="666">
+    <img id="pseudo-image" src="../../public/img/welcome.png" height="427" width="666">
+    <p id="pseudo-text" class="pseudo-text">Hi! I'm Eric. This is my super awesome website. Here you can find out about my hobbies, interests, and links to other great sites! Check out the stuff below.</p>
+</div><!--end pseudo content-->

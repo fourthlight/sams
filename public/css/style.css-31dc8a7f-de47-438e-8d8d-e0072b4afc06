@@ -1,0 +1,27 @@
+/* Main Style */
+
+/*UTILITY CLASSES*/
+.hidden {
+    display: none;
+}
+.absolue {
+    position: absolute;
+}
+/*STLYE*/
+* {
+/*    font-family: Comic Sans MS;*/
+}
+body {
+    background-image: url(../../public/img/background6.gif)
+}
+#pseudo-content {
+    margin: 0 auto;
+}
+#pseudo-title {
+    color: white;
+    font-size: 32px;
+    margin: 0 auto;
+    position: relative;
+    top: 100px;
+    left: 0px;
+}

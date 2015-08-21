@@ -1,0 +1,197 @@
+console.log('###MAIN.JS###');
+//not glitched by default
+var glitched = 0;
+//####################
+//## DOCUMENT READY ##
+//####################
+$(document).ready(function(){
+    //################
+    //## CHEET CODE ##
+    //################
+    cheet('↑ ↑ ↓ ↓ ← → ← → b a',function(){
+        console.log('JS cheet activated');
+        //if in normal mode, glitch out
+        if(glitched==0){
+            console.log('JS entering glitched mode');
+            //enter glitch mode
+            ftInterface();
+            return
+        //if in glitch mode, go normal
+        }else{
+            console.log('JS exiting glitched mode');
+            //exit glitch mode
+            tInterface();
+            return
+        };
+    });//end cheet
+    //#######################
+    //## SHOW SEND OPTIONS ##
+    //#######################
+    //send button
+    $('#send-button').click(function(){
+        console.log('JS send button clicked');
+        clearInputs();
+        $('#read-form-div').hide();
+        $('#send-form-div').show();
+        return;
+    });
+    //#######################
+    //## SHOW READ OPTIONS ##
+    //#######################
+    //read button
+    $('#read-button').click(function(){
+        console.log('JS read button clicked');
+        clearInputs();
+        $('#send-form-div').hide();
+        $('#read-form-div').show();
+        $('#confirm-button-read').show();
+        return;
+    });
+    //#################
+    //## ESC TO EXIT ##
+    //#################
+    //escape to exit
+    $(document).keyup(function(e){
+        //escape key up
+        if(e.keyCode==27){
+            if(glitched==1){
+                console.log('JS esc key hit');
+                //fast toggle interface
+                tInterface();
+                return
+            };
+        };//end escape keypress
+    });//end keypress
+    //######################
+    //## SEND FORM SUBMIT ##
+    //######################
+    $('#send-form').submit(function(){
+        console.log('JS send form submitted');
+        //vars from inputs
+        var agentName = escape($('#agent-name').val()),
+            keyCode = escape($('#key').val()),
+            msg = escape($('#message').val());
+        //concatinate url variable
+        var urlVar = "index.php/SamsDatabase/saveMessage/" + agentName + "/" + keyCode + "/" + msg;
+        
+//        //vars for inputs
+//        var agentNameInput = $('#input1').val(),
+//            keyCodeInput = $('#input2').val(),
+//            msgInput = $('#input3').val();
+        
+        //client-side validation
+        if(agentName.length<1||agentName.length>255||keyCode.length<1||keyCode.length>255||msg.length<1||msg.length>255){
+            console.log('invalid fields');
+            $('#invalid-fields').fadeIn(100).delay(300).fadeOut(100);
+            return false;
+        }else{
+            console.log('good to go');
+            //ajax call
+            $.ajax({
+                url: urlVar,
+                method: 'get',
+                success: function(data){
+                    //success function
+                    console.log('JS AJAX SUCCESS!');
+                }//close success function
+            });//close ajax call
+            //clear inputs
+            clearInputs();
+            //flash message send confirmation
+            $("#sent-message").fadeIn(100).delay(1000).fadeOut(100);
+            //dont redirect page
+            return false;
+        }
+    }); 
+    //######################
+    //## READ FORM SUBMIT ##
+    //######################
+    $('#read-form').submit(function(){
+        console.log('JS read form submitted');
+        //build variables for checkMessage from jQuery
+        var agentName = escape($('#agent-name-read').val()),
+            keyCode = escape($('#key-read').val()),
+            readObj = {agentName:agentName,keyCode:keyCode};
+        //client-side validation
+        if(agentName.length<1||agentName.length>255||keyCode.length<1||keyCode.length>255){
+            //flash invld fields
+            $('#invalid-fields').fadeIn(100).delay(300).fadeOut(100);
+            //dont redirect page
+            return false;
+        }else{
+            //run checkForMessages function
+            checkForMessages(readObj);
+            //show msg-body div and warning
+            $('#msg-body').toggle();
+            $('#warning').toggle();
+            $('#confirm-button-read').toggle();
+            $('#delete-button').toggle();
+            //flash message deleted confirmation
+            $("#warning").fadeIn(100).delay(3000).fadeOut(100);
+            //dont redirect page
+            return false;
+        }
+    });
+});//end document ready
+//###############
+//## FUNCTIONS ##
+//###############
+//clear inputs
+function clearInputs(){
+    $('#agent-name').val('');
+    $('#key').val('');
+    $('#message').val('');
+    $('#agent-name-read').val('');
+    $('#key-read').val('');
+    console.log('all inputs cleared');
+};
+//enter glitch mode
+function ftInterface(){
+    //change pseudo text
+    $('#pseudo-text').text('༼ つ ◕_◕ ༽つ༼ つ ◕_◕ ༽つ༼ つ ◕_◕ ༽つ༼ つ ◕_◕ ༽つ༼ つ ◕_◕ ༽つ༼ つ ◕_◕ ༽つ༼ つ ◕_◕ ༽つ༼ つ ◕_◕ ༽つ༼ つ ◕_◕ ༽つ༼ つ ◕_◕ ༽つ༼ つ ◕_◕ ༽つ༼ つ ◕_◕ ༽つ༼ つ ◕_◕ ༽つ༼ つ ◕_◕ ༽つ༼ つ ◕_◕ ༽つ༼ つ ◕_◕ ༽つ༼ つ ◕_◕ ༽つ༼ つ ◕_◕ ༽つ༼ つ ◕_◕ ༽つ༼ つ ◕_◕ ༽つ༼ つ ◕_◕ ༽つ༼ つ ◕_◕ ༽つ༼ つ ◕_◕ ༽つ༼ つ ◕_◕ ༽つ༼ つ ◕_◕ ༽つ༼ つ ◕_◕ ༽つ༼ つ ◕_◕ ༽つ༼ つ ◕_◕ ༽つ༼ つ ◕_◕ ༽つ༼ つ ◕_◕ ༽つ༼ つ ◕_◕ ༽つ༼ つ ◕_◕ ༽つ༼ つ ◕_◕ ༽つ༼ つ ◕_◕ ༽つ').attr('class', 'pseudo-text-glitched');
+    //change background to glitched
+    $('body').css('background-image','url(../../public/img/background6-glitched.png)');
+    //activate title glitch
+    $('#pseudo-title').toggleClass("glitch");
+    //hide normal image
+    $('#pseudo-image').toggle();
+    //show glitched image
+    $('#glitched-image').toggle();
+    //fade toggle sams content
+    $('#sams-content').fadeToggle();
+    //change counter
+    glitched = 1;
+};
+//exit glitch mode
+function tInterface(){
+    //change text back
+    $('.pseudo-text-glitched').text("Hi! I'm Eric. This is my super awesome website. Here you can find out about my hobbies, interests, and links to other great sites! Check out the stuff below.").attr('class', 'pseudo-text');
+    //change background back
+    $('body').css('background-image','url(../../public/img/background6.gif)');
+    //deactivate title glitch
+    $('#pseudo-title').toggleClass("glitch");
+    //show normal image
+    $('#pseudo-image').toggle();
+    //hide glitched image
+    $('#glitched-image').toggle();
+    //fast toggle sams content
+    $('#sams-content').toggle();
+    //change counter
+    glitched = 0;
+};
+//check for messages
+function checkForMessages(readObj){  
+        console.log('JS checkForMessages is running right now!');
+        //use ajax to run the check  
+        $.post("index.php/SamsDatabase/readMessage", {'agentName':readObj.agentName,'keyCode':readObj.keyCode},  
+            function(data, textStatus){
+                var decodedMsg = decodeURIComponent(data.msg);
+                //$('#msg-body').html(decodedMsg);
+                //console.log(data);
+                //console.log(decodedMsg);
+                $('#msg-body').html(decodedMsg);
+            },
+            "json"
+        );
+};
+console.log('main.js loaded');

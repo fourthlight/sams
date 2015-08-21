@@ -1,0 +1,238 @@
+/* Main Style */
+
+/*UTILITY CLASSES*/
+.hidden {
+    display: none;
+}
+.absolute {
+    position: absolute;
+}
+.relative {
+    position: relative;
+}
+
+/*STLYE*/
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-image: url(../../public/img/background6.gif);
+    background-repeat: repeat;
+    color: white;
+}
+#pseudo-content {
+    margin: 0 0 0 -115px;
+}
+#pseudo-title {
+    font-size: 32px;
+    margin: 25px 0px 0px 312px;
+    position: relative;
+    top: 20px;
+}
+#pseudo-image {
+    margin: 50px 0 0 175px;
+}
+#glitched-image {
+    margin: 50px 0 0 174px;
+}
+#pseudo-text {
+    font-size: 24;
+    margin: 24px 0 0 165px;
+    width: 800px;
+}
+.pseudo-text-glitched {
+    color: red;
+}
+#sams-content {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 10;
+}
+#interface {
+    z-index: 11;
+    top: 200px;
+    left: 350px;
+}
+#outer-glow {
+    z-index: 11;
+    top: -57px;
+    left: -49px;
+}
+#interface-svg {
+    width: 730px;
+    height: 450px;
+}
+#interface-darken {
+    z-index: 11;
+}
+#logo {
+    top: 30px;
+    left: 105px;
+    z-index: 11;
+}
+.interface-button {
+    height: 57px;
+    width: 141px;
+    z-index: 11;
+    border: none;
+    background-color: black;
+}
+#send-button {
+    top: 80px;
+    left: 140px;
+    background-image: url(../../public/img/send-button.png);
+}
+#read-button {
+    top: 80px;
+    left: 450px;
+    background-image: url(../../public/img/read-button.png);
+}
+#send-form-div {
+    top: 165px;
+    left: 265px;
+    color: #39ff00;
+    z-index: 12;
+}
+#read-form-div {
+    top: 165px;
+    left: 265px;
+    color: #39ff00;
+    z-index: 12;
+}
+.send-input {
+    background-color: black;
+    font-size: 18px;
+    width: 200px;
+    text-align: center;
+    border: 1px solid #39ff00;
+}
+.read-input {
+    background-color: black;
+    font-size: 18px;
+    width: 200px;
+    text-align: center;
+    border: 1px solid #39ff00;
+}
+#key {
+    margin: 10px 0 0 0;
+}
+#key-read {
+    margin: 10px 0 0 0;
+}
+#message {
+    top: 70px;
+    left: -47px;
+    border: 1px solid #39ff00;
+    background-color: black;
+    font-size: 16px;
+    resize: none;
+    width: 300px;
+    height: 150px;
+    margin: 10px 0 0 -45px;
+    padding: 5px;
+}
+#confirm-button-send {
+    z-index: 11;
+    border: none;
+    background-image: url(../../public/img/confirm-button.png);
+    background-size: cover;
+    height: 33px;
+    width: 122px;
+    margin: 7px 0px 0px 39px;
+}
+#confirm-button-read {
+    z-index: 11;
+    border: none;
+    background-image: url(../../public/img/confirm-button.png);
+    background-size: cover;
+    height: 33px;
+    width: 122px;
+    margin: 11px 0px 0px 39px;
+}
+#msg-body {
+    color: #39ff00;
+    background-color: black;
+    font-size: 18px;
+/*    width: 200px;*/
+/*    border: 1px solid #39ff00;*/
+    margin: 10px 0 10px -155px;
+    padding: 5px;
+    width: 500px;
+    max-height: 100px;
+    overflow: scroll;
+    overflow-x: hidden;
+    top: 66px;
+    left: -147px;
+}
+#read-form {
+    width: 200px;
+}
+#warning {
+    text-align: center;
+    color: red;
+    font-size: 14px;
+    background-color: black;
+    padding: 3px;
+    margin: -6px 0 -6px 0;
+    background-color: orange;
+}
+#delete-button {
+    z-index: 11;
+    border: none;
+    background-image: url(../../public/img/delete-button.png);
+    background-size: cover;
+    height: 33px;
+    width: 122px;
+    margin: 11px 0px 0px 39px;
+}
+#sent-message {
+    font-family: monospace;
+    color: red;
+    top: -66px;
+    left: 36px;
+    font-size: 18px;
+    background-color: orange;
+}
+#invalid-fields {
+    font-family: monospace;
+    color: red;
+    top: -66px;
+    left: 36px;
+    font-size: 18px;
+    background-color: orange;
+}
+#invalid-fields-read {
+    font-family: monospace;
+    color: red;
+    top: -66px;
+    left: 36px;
+    font-size: 18px;
+    background-color: orange;
+}
+#ad1 {
+    top: 206px;
+    left: 17px;
+    z-index: 21;
+}
+
+#ad2 {
+    top: 206px;
+    left: 635px;
+    z-index: 21;
+}
+
+/*INPUT PLACEHOLDER STYLING*/
+::-webkit-input-placeholder {
+   color: #39ff00;
+}
+:-moz-placeholder { /* Firefox 18- */
+   color: #39ff00;  
+}
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #39ff00;  
+}
+:-ms-input-placeholder {  
+   color: #39ff00;  
+}
