@@ -1,6 +1,6 @@
 SAMS (Secret Agent Messaging Service)
 ==========
-<a href="http://sams.fourthlight.com">sams.fourthlight.com</a> <br>
+<a href="http://45.55.64.92">45.55.64.92</a> <br>
 A student project for Advanced Serverside Langages. <br>
 
 Leave a message that will self destruct after viewing. ↑ ↑ ↓ ↓ ← → ← → B A <br>
